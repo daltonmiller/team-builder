@@ -1,11 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+
+
 const Form = () => {
+   
+    
     // constructor(props) {
     //   super(props);
     //   this.state = {
     //       username: '',
     //       email: '',
+
+
+        
 
     //     };
     const [username, setUsername] = useState("")
@@ -35,7 +42,7 @@ const Form = () => {
   
     const handleSubmit = (event) => {
         
-      setTitle([...title, `A name was submitted: ${username}, their email is: ${email}, and their hobby is: ${hobbies}. his age is ${age}`]);
+      setTitle([...title, `A name was submitted: ${username.trim()}, their email is: ${email.trim()}, and their hobby is: ${hobbies}. his age is ${age}`]);
       event.preventDefault();
       
     }
@@ -104,6 +111,7 @@ const Form = () => {
             <button type='submit'>submit</button>
         </form>
         <Card>{title.map(item => <div>{item}</div>)}</Card>
+        
         </div>
       );
     }
